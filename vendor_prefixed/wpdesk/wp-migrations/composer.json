@@ -1,0 +1,34 @@
+{
+    "name": "wpdesk\/wp-migrations",
+    "type": "library",
+    "description": "Doctrine Migrations clone suited for WordPress purposes.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bart Jaskulski",
+            "email": "bartek.jaskulski@wpdesk.net"
+        }
+    ],
+    "require": {
+        "php": "^7.1|^8",
+        "ext-json": "*",
+        "psr\/log": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "OmnibusVendor\\WPDesk\\Migrations\\": "src"
+        }
+    },
+    "require-dev": {
+        "szepeviktor\/phpstan-wordpress": "^1.1",
+        "wp-coding-standards\/wpcs": "^2"
+    },
+    "scripts": {
+        "test:phpstan": ".\/tools\/phpstan --configuration=phpstan.neon.dist --memory-limit=-1 analyze",
+        "test:phpcs": ".\/tools\/phpcs",
+        "test": [
+            "@test:phpcs",
+            "@test:phpstan"
+        ]
+    }
+}
